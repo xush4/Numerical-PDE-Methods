@@ -1,4 +1,5 @@
 function [a] = HW1_movie_output( x, t, u )
+a=0;
 h = plot(x, u(1,:), 'EraseMode', 'xor');
 axis([0 1 -inf inf]);			% 设定做图坐标范围
 grid on                         % 画出网格
