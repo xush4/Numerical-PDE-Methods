@@ -12,9 +12,9 @@ function [a] = HW2_1(fun_type, graph_type, xmax,tmax,xstep)
 % a=HW2_1(3,2,pi,pi,500);    %operator L3, dispersive 
                              %(Real part of different K travels at different speed) 
                              
-% type1 du/dt+a*du/dx=0;
-% type2 du/dt+a*du/dx-D*(d^2)u/dx^2=0;
-% type3 du/dt+a*du/dx-mu*(d^3)u/dx^3=0;
+% fun_type1 du/dt+a*du/dx=0;
+% fun_type2 du/dt+a*du/dx-D*(d^2)u/dx^2=0;
+% fun_type3 du/dt+a*du/dx-mu*(d^3)u/dx^3=0;
 
 % graph_type1 disspation
 % graph_type2 dispersion
