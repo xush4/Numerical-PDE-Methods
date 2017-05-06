@@ -1,0 +1,86 @@
+\begin{abstract}
+Option Pricing problems during investment projects are mostly solved by the simulation-based methods, the lattice methods and finite-difference methods(FDM). There are also papers implies the successful application of modified finite-element method(FEM), usually combined with techniques in FDM.\\
+In this paper, we investigated the application of finite-volume method to the Black-Scholes Model and provide a detail scheme for pratical implementations. A modified finite-volume methhod is introduced as a numerical simulation of European Option Pricing. Detailed derivation process of the method is developed and numerical results is provided. The numerical results are compared with Matlab built in solver and show a good performance of the method. 
+
+ \end{abstract}
+
+\section{Introduction} 
+An option is a financial derivative that represents a contract sold by one party (the option writer) to another party (the option holder). The contract offers the buyer the right, but not the obligation, to buy (call) or sell (put) a security or other financial asset at an agreed-upon price (the strike price) during a certain period of time or on a specific date (exercise date). \cite{JohnHull}\\
+
+Black-Scholes(BS) Model\cite{BS} is one of the most commonly employed model based on partial difference equations, which provides an exact closed form solutions for financial derivatives. The equation is stated as: 
+\begin{equation}
+\frac{\partial V}{\partial t}+rS \frac{\partial V}{\partial S}+\frac{1}{2} \sigma ^2 S^2 \frac{\partial ^2 V}{\partial S ^2}-rV=0
+\end{equation}
+where S is a real asset value, $0 \leq S \leq \infty$, V is the (real) option price, r is the risk-free rate, t is the time since the option was
+issued, $0 \leq t \leq T$ , and $\sigma$ is the real asset volatility. Eq. (1) is a backward moving equation, i.e. it is solved from
+the future to the present time.\\
+For an European call option the time condition becomes a final condition because its value is known at the maturity date
+t = T and it is defined as its intrinsic value by:
+\begin{equation}
+V(S, T ) = max(S - K, 0), \forall S.
+\end{equation}
+
+This model has been mostly solved by latice methods\cite{lattice1,lattice2}, Finite-Difference Method(FDM)\cite{lattice2,FDM1} and simulation methods\cite{longstaff2001valuing,monteC1}. There are also papers applying Finite-element Method(FEM) to BS\cite{FEM1,FEM2}, also suggesting good convergence. It is now known that the BS formula can be transformed into heat equation\cite{FEM1}:
+\begin{equation}
+\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial t^2} = 0
+\end{equation} \\
+This offers a solid theoretical foundation to solve BS formula with FDM, FEM as well as Finite-Volume Method(FVM)\cite{patankar1980numerical}. The finite volume method (FVM) is a method for representing and evaluating partial differential equations\cite{patankar1980numerical,leveque2002FVM}. Similar to the finite difference method or finite element method, values are calculated at discrete places on a meshed geometry. "Finite volume" refers to the small volume surrounding each node point on a mesh. In the finite volume method, volume integrals in a partial differential equation that contain a divergence term are converted to surface integrals, using the divergence theorem. These terms are then evaluated as fluxes at the surfaces of each finite volume. Because the flux entering a given volume is identical to that leaving the adjacent volume, these methods are conservative. Another advantage of the finite volume method is that it is easily formulated to allow for unstructured meshes. \cite{versteeg2007FVM} 
+
+The FVM method is rarely studied with BS model. In 2004, Wang\cite{wang2004FVM} introduced a method based on a fitted finite volume spatial discretization and an implicit time stepping technique. In this paper, we investigated the application of finite-volume method to the Black-Scholes Model and provide a detail scheme for pratical implementations. A modified finite-volume methhod is introduced as a numerical simulation of European Option Pricing. Detailed derivation process of the method is developed and numerical results is provided. The numerical results are compared with Matlab built-in solver and show a good performance of the method.\\ 
+%%%%%%%%%% MHD Equations &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+
+In section 1, we introduced the Black-Schole Model and describe the parameters. It is known that we know a strike at time $t=T$ and want to calculate the price at time $0 \leq t<T$. To deal with the problem, we define $\tau = T-t$ and transform the formula into:
+\begin{equation}
+\frac{\partial V}{\partial \tau}=rS \frac{\partial V}{\partial S}+\frac{1}{2} \sigma ^2 S^2 \frac{\partial ^2 V}{\partial S ^2}-rV
+\end{equation}
+where S is a real asset value, $0 \leq S \leq \infty$, V is the (real) option price, r is the risk-free rate, $\tau$ is the time before the option is
+exercised, $0 \leq \tau \leq T$ , and $\sigma$ is the real asset volatility.  \\
+
+We than integrate the function 2.1 on a divided domain $ A_i$ $ \times$ $T_i$ = $[S_{i-\frac{1}{2}},S_{i+\frac{1}{2}}]$ $\times$ $[\tau_j , \tau_{j+1}]$, where $S_{i-\frac{1}{2}}= \frac{1}{2} (S_{i-1}+S_{i})$, $S_{i+\frac{1}{2}}=\frac{1}{2} (S_{i}+S_{i+1})$. Let $\|T_i\|=$ $\Delta \tau=\tau_{j+1}-\tau_{j}$, $\|A_i\|= \|S_{i-\frac{1}{2}}-S_{i+\frac{1}{2}}\| $ $V_n^i=V(S _i, \tau _n)$ This will give us the formula:
+\begin{equation}
+\int _{A_i} V_i^{n+1}- V_i^{n}= \Delta \tau (\int _{A_i} rS \frac{\partial V}{\partial S}+ \int _{A_i} \frac{1}{2} \sigma ^2 S^2 \frac{\partial ^2 V}{\partial S ^2}- \|A_i\| rV)
+\end{equation}
+The left-hand side gives:
+\begin{equation}
+\int _{A_i} V_i^{n+1}- V_i^{n}=\|A_i\|(V_i^{n+1}- V_i^{n})
+\end{equation}
+For the right-hand side, using Approximation we have:
+\begin{equation}
+\begin{split}
+\int _{A_i} rS \frac{\partial V}{\partial S}
+&\approx rS_i[V_{i+\frac{1}{2}}-V_{i-\frac{1}{2}}]\\
+&\approx \frac{1}{2}rS_i[V_{i+1}-V_{i-1}]
+\end{split}
+\end{equation}
+
+\section{Discretization of BS Model with FVM}
+
+And:
+\begin{equation}
+\begin{split}
+\int _{A_i} \frac{1}{2} \sigma ^2 S^2 \frac{\partial ^2 V}{\partial S ^2}
+&\approx \frac{1}{2} \sigma ^2 S_i^2 [(V_S)_{i+\frac{1}{2}}
+-(V_S)_{i-\frac{1}{2}}] \\
+&\approx \frac{1}{2} \sigma ^2 S_i^2 (\frac{V_{i+1}-V_i}{S_{i+1}-S_i} - \frac{V_{i}-V_{i-1}}{S_{i}-S_{i-1}})
+\end{split}
+\end{equation}
+Now let's assemble every thing together:
+\begin{equation}
+\|A_i\|(V_i^{n+1}- V_i^{n}) \approx  \Delta \tau (\frac{1}{2}rS_i[V_{i+1}-V_{i-1}]+\frac{1}{2} \sigma ^2 S_i^2 (\frac{V_{i+1}-V_i}{S_{i+1}-S_i} - \frac{V_{i}-V_{i-1}}{S_{i}-S_{i-1}}) - \|A_i\| rV)
+\end{equation}
+This gives an implicit formula of $V^n$ and $V^{n+1}$.
+
+\section{Numerical Results}
+Settings:
+\begin{align*}
+\sigma = 0.4;
+r = 0.05;
+K = 100;
+T = 1;
+\end{align*}
+We input an S like this:
+\begin{align*}
+S = [0:20:60 61:4:89 90:0.8:110 111:4:139 140:20:200 300 500 1000 5000];
+\end{align*}

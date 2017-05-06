@@ -1,0 +1,51 @@
+% Copyright 2012 by Thomas Benson
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackage{beamercolorthemeelephant.sty}
+
+\mode<presentation>
+
+%\definecolor{tuftsbrown}{RGB}{48,15,0}
+\definecolor{tuftsblue}{RGB}{72,145,206}
+\definecolor{tuftsbrown}{RGB}{100,59,39}
+%\definecolor{tuftsblue}{RGB}{29,83,110}
+
+
+\setbeamercolor*{palette primary}{fg=white,bg=tuftsblue}
+\setbeamercolor*{palette secondary}{fg=white,bg=tuftsblue}
+\setbeamercolor*{palette tertiary}{fg=tuftsblue,bg=tuftsbrown}
+\setbeamercolor*{palette quaternary}{fg=white,bg=tuftsbrown}
+
+\setbeamercolor*{sidebar}{bg=tuftsbrown}
+  
+\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=tuftsbrown}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+
+
+\setbeamercolor{itemize item}{fg=black} % all frames will have brown bullets
+\setbeamercolor{itemize subitem}{fg=black} % all frames will have brown bullets subitem
+\setbeamercolor{itemize subsubitem}{fg=black} % all frames will have brown bullets subitem
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\mode
+<all>

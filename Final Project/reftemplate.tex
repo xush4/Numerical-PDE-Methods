@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+
+\newcounter{savecount}
+\usepackage{color}
+\usepackage{url}
+
+
+\newenvironment{Litemize}{
+\begin{itemize}
+  \setlength{\labelwidth}{12pt}%
+  \setlength{\itemindent}{0pt}%
+  \setlength{\labelsep}{2pt}%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\itemsep}{0pt}
+  \setlength{\topsep}{0pt}
+ \setlength{\partopsep}{-1pt}
+ \setlength{\parskip}{-1pt}
+}{\end{itemize}}
+
+
+\usepackage[text={6.5in,9in},centering]{geometry}
+
+\title{Report on ``Numerical Solutions for the Heat Equation Using Finite-Difference Schemes
+with Applications"\\
+  by 1205525}
+
+\begin{document}
+\baselineskip=0.94\normalbaselineskip
+
+\thispagestyle{empty}
+
+\maketitle
+
+The proposal explained a routine using Polar Coordinates and Finite-Difference Schemes to solve the heat diffusion equation representing the cooling process of a Nuclear Waste Rod. The author provided the PDE in X-Y-t axis and explained how to transfer it into R-$\phi$-t axis, where the angle component is of no importance. Then the author provided a reasonable initial condition and pointed out the FDMs he/she wants to use and study.
+\\
+
+The proposal is clear and well-written. The deduction transfers a 2D problem into 1D, making it easier to simulate numerically. And the methods the author intends to apply seem to be reasonable.\\
+
+Still, There are a few things I hope the author could notice during his study.\\
+
+\begin{enumerate}
+
+
+\item The equation $(5)$ and $(6)$ should not be applied to the equation $(4)$ the author wants to study. Some modifications should be done to deal with extra constants and first-order $\frac{\partial T}{\partial r}$term. Also, the condition of stability could be a little more complicated than what we have in class.
+
+\item The $\frac{1}{r}$ term in equation (4) seems to be very dangerous. It might cause very big error with r very close to 0. The author might consider to do some further transfer to the equation or study the error near the center.
+
+\item The proposal only considered the heat transfer on the lateral surface of cylinder, while the transfer on other surfaces (top and bottom) is omitted. The author might want to justify it a little bit, though it may not related to the purpose of this project.
+
+\end{enumerate}
+
+Overall, the proposal is nice, and the methods is doable. The author might want to refer to Evan's PDE book and notes in MA252 (if attended) to find an analytical solution.
+
+\end{document}

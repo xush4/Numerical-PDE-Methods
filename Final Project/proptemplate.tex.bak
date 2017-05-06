@@ -1,0 +1,157 @@
+
+%%%%%%%%% Latex Template
+
+%Font Size can be changed here
+\documentclass[11pt]{article}
+
+\pagestyle{plain}                                      
+
+%%%%%%%%%% EXACT 1in MARGINS %%%%%%%%%%%% 
+\usepackage[text={6.5in,9in},centering]{geometry}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%% DO NOT CHANGE: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\refname}{\begin{center}References Cited\end{center}} 
+   \setcounter{secnumdepth}{3} 
+    \setcounter{tocdepth}{2} 
+
+\makeatletter
+
+%%\def\section{\@startsection {section}{1}{\z@}{-3.5ex plus -1ex minus -.2ex}{0.1em}{\normalsize\bf}}
+\def\section{\@startsection {section}{1}{\z@}{1ex}{0.5em}{\normalsize\bf}}
+
+\def\subsection{\@startsection{subsection}{2}{\z@}{0.5ex}{-1em}{\normalsize\bf}}
+
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{0.5ex}{-1em}{\normalsize\bf}}
+
+\def\paragraph{\@startsection{paragraph}{4}{\z@}{0.5ex}{-1em}{\normalsize\bf}}
+
+\def\subparagraph{\@startsection{subparagraph}{4}{\z@}{0.5ex}{-1em}{\normalsize\bf}}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Packages needed
+\usepackage[pdftex]{graphicx}
+\usepackage{amscd}
+\usepackage[pdftex]{color} % black,white,red,green,blue,cyan,magen ta,yellow
+\usepackage[pdftex,colorlinks]{hyperref}
+\usepackage{amsmath, amsfonts, amssymb,mathrsfs}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{cite}
+
+\newenvironment{plan}
+{\bigskip\hrule\bigskip\centerline{\bf PLAN}\begin{quote}\tt}
+{\end{quote}\bigskip\hrule\bigskip}
+
+\newenvironment{instruction}
+{\hrule\smallskip
+\begin{small}\red\sf\noindent}
+{\end{small}
+\smallskip\hrule
+\bigskip}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in AcrobatÕs bookmarks
+    pdftoolbar=true,        % show AcrobatÕs toolbar?
+    pdfmenubar=true,        % show AcrobatÕs menu?
+    pdffitwindow=true,      % page fit to window when opened
+    pdftitle={NSF PIRE 2009},    % title
+    pdfauthor={J Xu},     % author
+    pdfsubject={Comp Math},   % subject of the document
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=black           % color of external links
+}
+
+%%Adler Macros
+\usepackage[pdftex]{graphicx}
+\def \vec#1{{\bf{#1}}}
+\def\pd#1#2{\frac{\partial #1}{\partial #2}}
+\def \mat#1{\underline{\underline{#1}}}
+\def \mylim#1#2{\lim_{#1 \rightarrow #2}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\func}{\mathcal{F}}
+\newcommand{\vw}{\mbox{\boldmath$\omega$}}
+\newcommand{\vb}{\mbox{\boldmath$\beta$}}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newcommand{\mV}{\mathcal{V}}
+\newcommand{\mL}{\mathcal{L}}
+
+\newenvironment{jhalist}{
+\vspace*{-6pt}
+\begin{list}{\labelitemi}{\leftmargin=1.4em}
+ \setlength{\itemsep}{1pt}
+ \setlength{\parskip}{0pt}
+ \setlength{\parsep}{0pt}
+}{\end{list}}
+
+
+\begin{document}
+
+
+%%%%%%%%% PROPOSAL -- 2 pages 
+
+\setcounter{section}{0}
+
+\begin{center}
+\textbf{Your Title Here}\end{center}
+
+\section{My Section}
+
+This is a section.  This is how we itemize.
+\begin{itemize}
+\item[1.]	I one the sandbox.
+\item[2.] I two the sandbox. 
+\item[3.]	I three the sandbox.
+\item[4.] I four the sandbox. 
+\item[5.]	I five the sandbox.
+\item[6.] I six the sandbox. 
+\item[7.]	I seven the sandbox.
+\item[8.] I eight the sandbox. 
+\item[9.] That's gross...
+\end{itemize}
+	
+\section{Another Section}
+\subsection{With Subsections}
+
+This is how to include a figure.  By the way:
+%comments work like this...
+\begin{figure}[h!]
+\centering
+%\includegraphics[scale=0.35]{filename}
+\caption{I am a caption.  I really wish I had a figure...}
+\label{myfig}
+\end{figure}
+
+This is how your reference a figure, like Figure \ref{myfig}.
+
+This is how you cite an article or book
+\cite{1986BrandtA-aa,2001TrottenbergU_OosterleeC_SchullerA-aa}.  I
+really suggest you use BibDesk...
+
+
+
+\newpage
+% Reset page counter for References
+\setcounter{page}{1}
+
+%%%%%%%%% REFERENCES -- 1 page
+
+\bibliographystyle{plain}
+%\nocite{*}
+\bibliography{mybib}
+
+
+\end{document}
+
+

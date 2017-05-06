@@ -1,0 +1,186 @@
+%%
+
+\documentclass[final]{siamltex}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{color}
+\usepackage{amsmath}
+
+% definitions used by included articles, reproduced here for
+% educational benefit, and to minimize alterations needed to be made
+% in developing this sample file.
+
+\newcommand{\pe}{\psi}
+\def\d{\delta}
+\def\ds{\displaystyle}
+\def\e{{\epsilon}}
+\def\eb{\bar{\eta}}
+\def\enorm#1{\|#1\|_2}
+\def\Fp{F^\prime}
+\def\fishpack{{FISHPACK}}
+\def\fortran{{FORTRAN}}
+\def\gmres{{GMRES}}
+\def\gmresm{{\rm GMRES($m$)}}
+\def\Kc{{\cal K}}
+\def\norm#1{\|#1\|}
+\def\wb{{\bar w}}
+\def\zb{{\bar z}}
+
+% some definitions of bold math italics to make typing easier.
+% They are used in the corollary.
+
+\def\bfE{\mbox{\boldmath$E$}}
+\def\bfG{\mbox{\boldmath$G$}}
+
+% My commands and macros (comment out if you don't want them)
+\def \vec#1{{\bf{#1}}}
+\def\pd#1#2{\dfrac{\partial #1}{\partial #2}}
+\def \mat#1{\underline{\underline{#1}}}
+\def \mylim#1#2{\lim_{#1 \rightarrow #2}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\func}{\mathcal{F}}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+
+\title{Your Title\thanks{Submitted for Math 250 Final Project, April 25, 2015}}
+
+% The thanks line in the title should be filled in if there is
+% any support acknowledgement for the overall work to be included
+% This \thanks is also used for the received by date info, but
+% authors are not expected to provide this.
+
+\author{I. M. Author
+\thanks{Department of Mathematics, 503 Boston Ave, Tufts University,
+Medford, MA 02155. {\it email:} {\tt
+email@tufts.edu}  } }
+
+
+\begin{document}
+
+\maketitle
+
+%%%%%% ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+This is an abstract and it should summarize your findings.  Try not to use citations, unless really necessary.   \end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{keywords}
+nonlinear PDEs, ??
+\end{keywords}
+
+\section*{Acknowledgments}
+Did anyone help??
+
+\pagestyle{myheadings}
+\thispagestyle{plain}
+\markboth{\sc LastName}{\sc SHORT TITLE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Intro %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction} Your paper should have an intro where you give the background information on the PDE and why it is interesting.  This should be where you give
+a literature review.  Citations are done like this, \cite{1986BrandtA-aa,2001TrottenbergU_OosterleeC_SchullerA-aa}.
+
+%%%%%%%%%% MHD Equations &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\section{More Sections}
+
+This is how you do a table.  
+\begin{table}[h!]
+\centering
+{\small
+\begin{tabular}{|c|c|c|c|c|c|c|}
+
+\hline
+
+Time&Grid&DOF&Nwt Steps&Avg V-cycles&Work Units&Avg WU/Timestep\\
+
+\hline
+
+1-82&6&595&1&4&0.011&\\
+
+1-82&5&2,079&2&11.&0.118&\\
+
+1-82&4&7,735&2&14.1&0.650&\\
+
+1-82&3&29,799&2&17.8&3.421&$\approx 35$ WU\\
+
+1-82&2&116,935&1&15.7&12.677&\\
+
+1-82&1&463,239&1&5.7&18.358&\\
+\hline
+
+83-200&6&595&2&8&0.021&\\
+
+83-200&5&2,079&2&11&0.118&\\
+
+83-200&4&7,735&2&18.4&0.852&\\
+
+83-200&3&29,799&2&21&4.063& $\approx 77$ WU\\
+
+83-200&2&116,935&1&20.9&16.869&\\
+
+83-200&1&463,239&1&16.9&55.036&\\
+
+\hline
+
+\end{tabular}
+}
+
+\caption{Number of degrees of freedom (DOF), Newton steps, and V-cycles used at each level and timestep.  The number of work units (WU) or equivalent fine-grid relaxations are also computed here.}
+\label{tearingunif}
+\end{table}
+
+
+
+Look I referenced Table \ref{tearingunif}. 
+
+This is how we itemize.
+\begin{itemize}
+\item[1.]	I one the sandbox.
+\item[2.] I two the sandbox. 
+\item[3.]	I three the sandbox.
+\item[4.] I four the sandbox. 
+\item[5.]	I five the sandbox.
+\item[6.] I six the sandbox. 
+\item[7.]	I seven the sandbox.
+\item[8.] I eight the sandbox. 
+\item[9.] That's gross...
+\end{itemize}
+	
+\section{Another Section}
+\subsection{With Subsections}
+
+This is how to include a figure.  By the way:
+%comments work like this...
+\begin{figure}[h!]
+\centering
+%\includegraphics[scale=0.35]{filename}
+\caption{I am a caption.  I really wish I had a figure...}
+\label{myfig}
+\end{figure}
+
+This is how your reference a figure, like Figure \ref{myfig}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Conclusion %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+You should definitely have a conclusion or discussion section.  Summarize your findings and discuss what future aspects may be studied on the topic. 
+
+Oh yes, and don't forget to spellcheck!!!!!!
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% References %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{plain}	% or "siam", or "alpha", or "abbrv"
+				% see other styles (.bst files) in
+				% $TEXHOME/texmf/bibtex/bst
+
+\nocite{*}		% list all refs in database, cited or not.
+
+\bibliography{refs}		% bib database file refs.bib
+
+\end{document}
+

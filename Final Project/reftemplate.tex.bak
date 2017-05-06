@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+
+\newcounter{savecount}
+\usepackage{color}
+\usepackage{url}
+
+
+\newenvironment{Litemize}{
+\begin{itemize}
+  \setlength{\labelwidth}{12pt}%
+  \setlength{\itemindent}{0pt}%
+  \setlength{\labelsep}{2pt}%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\itemsep}{0pt}
+  \setlength{\topsep}{0pt}
+ \setlength{\partopsep}{-1pt}
+ \setlength{\parskip}{-1pt}
+}{\end{itemize}}
+
+
+\usepackage[text={6.5in,9in},centering]{geometry}
+
+\title{Report on ``Numerical Solutions for the Heat Equation Using Finite-Di?erence Schemes
+with Applications"\\
+  by 1205525}
+
+\begin{document}
+\baselineskip=0.94\normalbaselineskip
+
+\thispagestyle{empty}
+
+\maketitle
+
+The proposal explained a routine using Polar Coordinates and Finite-Difference Schemes to solve the heat diffusion equation representing the cooling process of a Nuclear Waste Rod. The author provided the PDE in X-Y-t axis and explained how to transfer it into R-$\phi$-t axis, where the angle component is of no importance. Then the author provided a reasonable initial condition and pointed out the FDMs he/she wants to use and study.
+\\
+
+Give a couple of sentences giving your overall review of the proposal.
+
+\begin{enumerate}
+\item Create a list of comments and/or suggestions.
+
+\item If you are referring to a very specific portion of text, please
+  indicate the page and where in the text it appears.
+
+\item You do not have to use this itemized list format.  It is merely
+  a suggestion.
+
+\end{enumerate}
+
+Final remarks?
+
+\end{document}

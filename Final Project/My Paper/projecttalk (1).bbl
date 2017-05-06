@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{BS}
+Fischer Black and Myron Scholes.
+\newblock The pricing of options and corporate liabilities.
+\newblock {\em Journal of political economy}, 81(3):637--654, May 1973.
+
+\bibitem{patankar1980numerical}
+SV~Patankar.
+\newblock {\em Numerical Heat Transfer and Fluid Flow}.
+\newblock McGraw Hill, 1980.
+
+\bibitem{leveque2002FVM}
+Randall~J LeVeque.
+\newblock {\em Finite volume methods for hyperbolic problems}, volume~31.
+\newblock Cambridge university press, 2002.
+
+\bibitem{versteeg2007FVM}
+Henk~Kaarle Versteeg and Weeratunge Malalasekera.
+\newblock {\em An introduction to computational fluid dynamics: the finite
+  volume method}.
+\newblock Pearson Education, 2007.
+
+\bibitem{JohnHull}
+John Hull.
+\newblock {\em Options Futures and Other Derivatives}.
+\newblock Pearson Education, 2006.
+
+\bibitem{lattice1}
+Gonzalo Cortazar.
+\newblock Simulation and numerical methods in real options valuation.
+\newblock {\em EFMA 2000 Athens}, December 2000.
+
+\bibitem{lattice2}
+Robert Geske and Kuldeep Shastri.
+\newblock Valuation by approximation: a comparison of alternative option
+  valuation techniques.
+\newblock {\em Journal of Financial and Quantitative Analysis}, 20(1):45--71,
+  1985.
+
+\bibitem{FDM1}
+Domingo Tavella and Curt Randall.
+\newblock {\em Pricing financial instruments: The finite difference method},
+  volume~13.
+\newblock John Wiley \& Sons, 2000.
+
+\bibitem{longstaff2001valuing}
+Francis~A Longstaff and Eduardo~S Schwartz.
+\newblock Valuing american options by simulation: a simple least-squares
+  approach.
+\newblock {\em Review of Financial studies}, 14(1):113--147, 2001.
+
+\bibitem{monteC1}
+Leonard~CG Rogers.
+\newblock Monte carlo valuation of american options.
+\newblock {\em Mathematical Finance}, 12(3):271--286, 2002.
+
+\bibitem{FEM1}
+A~Andalaft-Chacur, M~Montaz Ali, and J~Gonz{\'a}lez Salazar.
+\newblock Real options pricing by the finite element method.
+\newblock {\em Computers \& Mathematics with Applications}, 61(9):2863--2873,
+  2011.
+
+\bibitem{FEM2}
+A~Golbabai, LV~Ballestra, and D~Ahmadian.
+\newblock Superconvergence of the finite element solutions of the
+  black--scholes equation.
+\newblock {\em Finance Research Letters}, 10(1):17--26, 2013.
+
+\bibitem{wang2004FVM}
+Song Wang.
+\newblock A novel fitted finite volume method for the black--scholes equation
+  governing option pricing.
+\newblock {\em IMA Journal of Numerical Analysis}, 24(4):699--720, 2004.
+
+\end{thebibliography}
